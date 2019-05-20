@@ -26,12 +26,12 @@ public interface IDepartmentController {
     /**
      * insert method untuk memasukan data ke dalam tabel Departments
      */
-    public String insert(String id, String name, String manager_id, String location_id);
+    public String insert(String name, String manager_id, String location_id,String id);
     
     /**
      * insert method untuk mengganti nilai dalam tabel Departments
      */
-    public String update(String id, String name, String manager_id, String location_id);
+    public String update(String name, String manager_id, String location_id, String id);
     
     /**
      * insert method untuk menghapus satu baris data sesuai data masukan dalam tabel Departments
