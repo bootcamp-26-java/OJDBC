@@ -12,6 +12,11 @@ import tools.DBConnection;
 import models.Region;
 import models.Department;
 import models.Employee;
+import daos.JobDAO;
+import icontrollers.IJobsController;
+import idaos.IJobDAO;
+import models.Job;
+import views.JobView;
 
 /**
  *
@@ -270,10 +275,12 @@ public class OJDBC {
 //        ijc.delete("133");
 
 //Test Employee
-        EmployeeDAO edao = new EmployeeDAO(connection.getConnection());
-        for (Employee employee : edao.getData("", false)) {
-            System.out.println(employee.getId());
-            System.out.println(employee.getFirstName());
+        JobDAO jdao = new JobDAO(connection.getConnection());
+        for (Job job : jdao.getData("PR", true)) {
+            System.out.println(job.getId());
+            System.out.println(job.getTitle());
+            System.out.println(job.getMin_Salary());
+            System.out.println(job.getMax_Salary());
         }
     }   
  }

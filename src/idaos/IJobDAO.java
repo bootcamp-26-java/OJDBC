@@ -15,36 +15,39 @@ public interface IJobDAO {
      * method yang digunakan untuk mengambil semua data dari tabel Job
      * @return 
      */
-    public List<Job> getAll();
+//    public List<Job> getAll();
+//    
+//    /**
+//     * method yang digunakan untuk mendapatkan dan meyeleksi data dari tabel Job
+//     * @return 
+//     */
+//    public List<Job> getByID(String id);
+//   
+//    /**
+//     * method yang digunakan untuk memasukkan data ke dalam tabel Job
+//     * @param j
+//     * @return 
+//     */
+    public boolean delete (String id);
+
+//    public List<Job> search(String key);
+//    
     
-    /**
-     * method yang digunakan untuk mendapatkan dan meyeleksi data dari tabel Job
-     * @return 
-     */
-    public List<Job> getByID(String id);
-   
-    /**
-     * method yang digunakan untuk memasukkan data ke dalam tabel Job
-     * @param j
-     * @return 
-     */
-    public boolean insert (Job j);
-    
-    /**
-     * method yang digunakan untuk mengganti nilai data di tabel Job
-     * @param j
-     * @return 
-     */
-    public boolean update (Job j);
+    public List<Job> getData(Object key, boolean IsGetById);
     
     /**
      * method yang digunakan untuk menghapus satu baris data sesuai id masukkan
      * @param j
      * @return 
      */
-    public boolean delete (String id);
-
-    public List<Job> search(String key);
+    
+    public boolean save (Job j, boolean IsInsert);
+    
+    /**
+     * method yang digunakan untuk mengganti nilai data di tabel Job
+     * @param j
+     * @return 
+     */
     
     
     
