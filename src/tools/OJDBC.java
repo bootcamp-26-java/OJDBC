@@ -170,21 +170,21 @@ public class OJDBC {
         /**
          * SEARCH COUNTRY
          */
-//        ICountryDAO icdao = new CountryDAO(connection.getConnection());
-//        for (Country country : icdao.search("Ar")) {
-//            System.out.println(country.getC_id());
-//            System.out.println(country.getName());
-//            System.out.println(country.getR_id());
-//        }
+        ICountryDAO icdao = new CountryDAO(connection.getConnection());
+        for (Country country : icdao.getData("BA",false)) {
+            System.out.println(country.getC_id());
+            System.out.println(country.getName());
+            System.out.println(country.getR_id());
+        }
         /**
          * INSERT COUNTRY
          */
 //        ICountryDAO icdao = new  CountryDAO(connection.getConnection());
-//        Country country = new Country("BA","Bawen",32);
-//        System.out.println(icdao.insert(country));
-        /**
-         * UPDATE COUNTRY
-         */
+//        Country country = new Country("BE","Bawen",34);
+//        System.out.println(icdao.save(country,true));
+//        /**
+//         * UPDATE COUNTRY
+//         */
 //        ICountryDAO icdao = new  CountryDAO(connection.getConnection());
 //        Country country = new Country("BA","Bawen City",32);
 //        System.out.println(icdao.update(country));
@@ -275,6 +275,7 @@ public class OJDBC {
 //        ijc.delete("133");
 
 //Test Employee
+
         JobDAO jdao = new JobDAO(connection.getConnection());
         for (Job job : jdao.getData("PR", true)) {
             System.out.println(job.getId());
@@ -282,6 +283,13 @@ public class OJDBC {
             System.out.println(job.getMin_Salary());
             System.out.println(job.getMax_Salary());
         }
+
+//        EmployeeDAO edao = new EmployeeDAO(connection.getConnection());
+//        for (Employee employee : edao.getData("", false)) {
+//            System.out.println(employee.getId());
+//            System.out.println(employee.getFirstName());
+//        }
+
     }   
  }
 
