@@ -71,7 +71,7 @@ public class LocationDAO implements ILocationDAO {
     @Override
     public boolean delete(int id) {
         boolean result = false;
-        String query = "DELETE FROM REGIONS WHERE region_id = ?";
+        String query = "DELETE FROM LOCATIONS WHERE location_id = ?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setInt(1, id);
