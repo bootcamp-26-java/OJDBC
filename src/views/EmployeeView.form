@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Container class="javax.swing.JMenu" name="jMenu1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jMenu1"/>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+        <Property name="useNullLayout" type="boolean" value="true"/>
+      </Layout>
+    </Container>
+    <Container class="javax.swing.JMenu" name="jMenu2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jMenu2"/>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+        <Property name="useNullLayout" type="boolean" value="true"/>
+      </Layout>
+    </Container>
+    <Container class="javax.swing.JFrame" name="jFrame1">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -23,13 +58,396 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Component id="LIdKaryawan" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="LIdKaryawan" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JInternalFrame" name="LIdKaryawan">
+      <Properties>
+        <Property name="visible" type="boolean" value="true"/>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="label1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="187" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                                  <Component id="label14" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="33" max="32767" attributes="0"/>
+                                  <Component id="tCari" min="-2" pref="341" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="label2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label8" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="label3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="tBelakang" max="32767" attributes="0"/>
+                                      <Component id="tEmail" max="32767" attributes="0"/>
+                                      <Component id="tTelepon" max="32767" attributes="0"/>
+                                      <Component id="tIdPekerjaan" max="32767" attributes="0"/>
+                                      <Component id="tGaji" max="32767" attributes="0"/>
+                                      <Component id="tKomisi" max="32767" attributes="0"/>
+                                      <Component id="tIdManager" max="32767" attributes="0"/>
+                                      <Component id="tIdDepartment" pref="318" max="32767" attributes="0"/>
+                                      <Component id="tIdKaryawan" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="tDepan" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="tDate" min="-2" pref="179" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                                          <Component id="label13" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="btnSimpan" min="-2" pref="90" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                          <Component id="btnHapus" min="-2" pref="85" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jPanel1" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="label1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="label2" min="-2" max="-2" attributes="0"/>
+                      <Component id="tIdKaryawan" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="label3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tDepan" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="label4" min="-2" max="-2" attributes="0"/>
+                      <Component id="tBelakang" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="label5" min="-2" max="-2" attributes="0"/>
+                      <Component id="tEmail" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="label6" min="-2" max="-2" attributes="0"/>
+                      <Component id="tTelepon" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="label7" min="-2" max="-2" attributes="0"/>
+                              <Component id="tDate" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="label8" min="-2" max="-2" attributes="0"/>
+                              <Component id="tIdPekerjaan" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="label9" min="-2" max="-2" attributes="0"/>
+                              <Component id="tGaji" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="label10" min="-2" max="-2" attributes="0"/>
+                              <Component id="tKomisi" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="label11" min="-2" max="-2" attributes="0"/>
+                              <Component id="tIdManager" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="label12" min="-2" max="-2" attributes="0"/>
+                              <Component id="tIdDepartment" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="label13" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="btnSimpan" min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="btnHapus" min="-2" pref="34" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="tCari" min="-2" max="-2" attributes="0"/>
+                      <Component id="label14" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="90" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="java.awt.Label" name="label1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="FORM DATA KARYAWAN"/>
+          </Properties>
+        </Component>
+        <Component class="java.awt.Label" name="label2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ID KARYAWAN"/>
+          </Properties>
+        </Component>
+        <Component class="java.awt.Label" name="label3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="NAMA DEPAN"/>
+          </Properties>
+        </Component>
+        <Component class="java.awt.Label" name="label4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="NAMA BELAKANG"/>
+          </Properties>
+        </Component>
+        <Component class="java.awt.Label" name="label5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="EMAIL"/>
+          </Properties>
+        </Component>
+        <Component class="java.awt.Label" name="label6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="TELEPON"/>
+          </Properties>
+        </Component>
+        <Component class="java.awt.Label" name="label7">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="HIRING"/>
+          </Properties>
+        </Component>
+        <Component class="java.awt.Label" name="label8">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ID PEKERJAAN"/>
+          </Properties>
+        </Component>
+        <Component class="java.awt.Label" name="label9">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="GAJI"/>
+          </Properties>
+        </Component>
+        <Component class="java.awt.Label" name="label10">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="TUNJANGAN"/>
+          </Properties>
+        </Component>
+        <Component class="java.awt.Label" name="label11">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ID MANAGER"/>
+          </Properties>
+        </Component>
+        <Component class="java.awt.Label" name="label12">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ID DEPARTMENT"/>
+          </Properties>
+        </Component>
+        <Component class="java.awt.TextField" name="tBelakang">
+        </Component>
+        <Component class="java.awt.TextField" name="tEmail">
+        </Component>
+        <Component class="java.awt.TextField" name="tTelepon">
+        </Component>
+        <Component class="java.awt.TextField" name="tDate">
+        </Component>
+        <Component class="java.awt.TextField" name="tIdPekerjaan">
+        </Component>
+        <Component class="java.awt.TextField" name="tGaji">
+        </Component>
+        <Component class="java.awt.TextField" name="tKomisi">
+        </Component>
+        <Component class="java.awt.TextField" name="tIdManager">
+        </Component>
+        <Component class="java.awt.TextField" name="tIdDepartment">
+        </Component>
+        <Component class="java.awt.TextField" name="tIdKaryawan">
+        </Component>
+        <Component class="java.awt.TextField" name="tDepan">
+        </Component>
+        <Component class="java.awt.Label" name="label13">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="DD-MM-YYYY"/>
+          </Properties>
+        </Component>
+        <Component class="java.awt.Button" name="btnSimpan">
+          <Properties>
+            <Property name="actionCommand" type="java.lang.String" value=""/>
+            <Property name="label" type="java.lang.String" value="SIMPAN"/>
+            <Property name="name" type="java.lang.String" value="" noResource="true"/>
+          </Properties>
+        </Component>
+        <Component class="java.awt.Button" name="btnHapus">
+          <Properties>
+            <Property name="label" type="java.lang.String" value="HAPUS"/>
+          </Properties>
+        </Component>
+        <Component class="java.awt.TextField" name="tCari">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tCariActionPerformed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tCariKeyReleased"/>
+          </Events>
+        </Component>
+        <Component class="java.awt.Label" name="label14">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="SEARCH"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JPanel" name="jPanel1">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="tData">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="11" rowCount="4">
+                        <Column editable="true" title="Id Karyawan" type="java.lang.Object"/>
+                        <Column editable="true" title="Nama Depan" type="java.lang.Object"/>
+                        <Column editable="true" title="Nama Belakang" type="java.lang.Object"/>
+                        <Column editable="true" title="Email" type="java.lang.Object"/>
+                        <Column editable="true" title="Telepon" type="java.lang.Object"/>
+                        <Column editable="true" title="Hire Date" type="java.lang.Object"/>
+                        <Column editable="true" title="Id Pekerjaan" type="java.lang.Object"/>
+                        <Column editable="true" title="Gaji" type="java.lang.Object"/>
+                        <Column editable="true" title="Komisi" type="java.lang.Object"/>
+                        <Column editable="true" title="Id Manager" type="java.lang.Object"/>
+                        <Column editable="true" title="id Department" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
 </Form>
