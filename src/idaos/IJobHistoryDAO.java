@@ -26,8 +26,5 @@ public interface IJobHistoryDAO {
     
     public boolean delete(int id);
     public List<JobHistory> getData(Object key, boolean isGetByEmployee_Id);
-    public boolean save(JobHistory r, boolean isInsert);
-    
-
-    
+    public boolean save(JobHistory r, boolean isInsert);    
 }
