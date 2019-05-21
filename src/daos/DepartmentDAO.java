@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import models.Department;
-
 /**
  *
  * @author ASUS
@@ -19,101 +18,39 @@ public class DepartmentDAO implements IDepartmentDAO {
     public DepartmentDAO(Connection connection) {
         this.connection = connection;
     }
-
+    
     @Override
-    public List<Department> getAll() {
+    public  List<Department> getData(Object key,boolean isGetByID){
         List<Department> listDepartment = new ArrayList<Department>();
-        String query = "SELECT * FROM Departments ORDER BY department_id";
+        String query = (isGetByID)
+                ?"SELECT * FROM DEPARTMENTS WHERE department_id = ? "
+                :"SELECT * FROM DEPARTMENTS WHERE department_id LIKE ? OR department_name LIKE ? ";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
+            if (isGetByID) {
+                preparedStatement.setInt(1, (int) key);
+            }else{
+                preparedStatement.setString(1, "%" + key.toString() + "%");
+                preparedStatement.setString(2, "%" + key.toString() + "%");
+            }
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 Department d = new Department(resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3), resultSet.getInt(4));
-                d.setId(resultSet.getInt(1));
-                d.setName(resultSet.getString(2));
-                d.setManager_id(resultSet.getInt(3));
-                d.setLocation_id(resultSet.getInt(4));
-                listDepartment.add(d);
-
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return listDepartment;
-    }
-
-    @Override
-    public List<Department> getById(int id) {
-        List<Department> listDepartment = new ArrayList<Department>();
-        String query = "SELECT * FROM Departments WHERE id = (?)";
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setInt(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                Department d = new Department(resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3), resultSet.getInt(4));
-                //gak usah
-                d.setId(resultSet.getInt(1));
-                d.setName(resultSet.getString(2));
-                d.setManager_id(3);
-                d.setLocation_id(4);
                 listDepartment.add(d);
             }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return listDepartment;
-    }
-
-    @Override
-    public List<Department> search(String key) {
-        List<Department> listDepartment = new ArrayList<Department>();
-        String query = "SELECT * FROM Departments WHERE REGEXP_LIKE (department_id, '?', 'i') OR REGEXP_LIKE (department_name, '?', 'i') ORDER BY department_id";
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, "%" + key + "%");
-            preparedStatement.setString(2, "%" + key + "%");
-            ResultSet resultSet = preparedStatement.executeQuery();
-            while (resultSet.next()) {
-                Department d = new Department(resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3), resultSet.getInt(4));
-                d.setId(resultSet.getInt(1));
-                d.setName(resultSet.getString(2));
-                d.setManager_id(resultSet.getInt(3));
-                d.setLocation_id(resultSet.getInt(4));
-                listDepartment.add(d);
-            }
-
+            
         } catch (Exception e) {
             e.getStackTrace();
         }
-
         return listDepartment;
     }
-
+    
     @Override
-    public boolean insert(Department d) {
+    public boolean save(Department d, boolean isInsert){
         boolean result = false;
-        String query = "INSERT INTO Departments (department_id, department_name, manager_id, location_id) VALUES (?,?,?,?)";
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setInt(1, d.getId());
-            preparedStatement.setString(2, d.getName());
-            preparedStatement.setInt(3, d.getManager_id());
-            preparedStatement.setInt(4, d.getLocation_id());
-            preparedStatement.executeQuery();
-            result = true;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return result;
-    }
-
-    @Override
-    public boolean update(Department d) {
-        boolean result = false;
-        String query = "UPDATE Departments SET department_name = ?,manager_id = ?, location_id=? WHERE department_id=?";
+        String query = (isInsert)
+                ?"INSERT INTO DEPARTMENTS (department_name, manager_id, location_id, department_id) VALUES(?,?,?,?)"
+                :"UPDATE DEPARTMENTS SET department_name=?, manager_id=?, location_id=? WHERE department_id = ?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, d.getName());
@@ -123,11 +60,11 @@ public class DepartmentDAO implements IDepartmentDAO {
             preparedStatement.executeQuery();
             result = true;
         } catch (Exception e) {
-            e.getStackTrace();
+            e.printStackTrace();
         }
         return result;
     }
-
+    
     @Override
     public boolean delete(int id) {
         boolean result = false;
@@ -143,4 +80,116 @@ public class DepartmentDAO implements IDepartmentDAO {
         return result;
     }
 
+    
+    
+    
+//    @Override
+//    public List<Department> getAll() {
+//        List<Department> listDepartment = new ArrayList<Department>();
+//        String query = "SELECT * FROM Departments ORDER BY department_id";
+//        try {
+//            PreparedStatement preparedStatement = connection.prepareStatement(query);
+//            ResultSet resultSet = preparedStatement.executeQuery();
+//            while (resultSet.next()) {
+//                Department d = new Department(resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3), resultSet.getInt(4));
+//                d.setId(resultSet.getInt(1));
+//                d.setName(resultSet.getString(2));
+//                d.setManager_id(resultSet.getInt(3));
+//                d.setLocation_id(resultSet.getInt(4));
+//                listDepartment.add(d);
+//
+//            }
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return listDepartment;
+//    }
+//
+//    @Override
+//    public List<Department> getById(int id) {
+//        List<Department> listDepartment = new ArrayList<Department>();
+//        String query = "SELECT * FROM Departments WHERE id = (?)";
+//        try {
+//            PreparedStatement preparedStatement = connection.prepareStatement(query);
+//            preparedStatement.setInt(1, id);
+//            ResultSet resultSet = preparedStatement.executeQuery();
+//            while (resultSet.next()) {
+//                Department d = new Department(resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3), resultSet.getInt(4));
+//                //gak usah
+//                d.setId(resultSet.getInt(1));
+//                d.setName(resultSet.getString(2));
+//                d.setManager_id(3);
+//                d.setLocation_id(4);
+//                listDepartment.add(d);
+//            }
+//
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return listDepartment;
+//    }
+//
+//    @Override
+//    public List<Department> search(String key) {
+//        List<Department> listDepartment = new ArrayList<Department>();
+//        String query = "SELECT * FROM Departments WHERE REGEXP_LIKE (department_id, '?', 'i') OR REGEXP_LIKE (department_name, '?', 'i') ORDER BY department_id";
+//        try {
+//            PreparedStatement preparedStatement = connection.prepareStatement(query);
+//            preparedStatement.setString(1, "%" + key + "%");
+//            preparedStatement.setString(2, "%" + key + "%");
+//            ResultSet resultSet = preparedStatement.executeQuery();
+//            while (resultSet.next()) {
+//                Department d = new Department(resultSet.getInt(1), resultSet.getString(2), resultSet.getInt(3), resultSet.getInt(4));
+//                d.setId(resultSet.getInt(1));
+//                d.setName(resultSet.getString(2));
+//                d.setManager_id(resultSet.getInt(3));
+//                d.setLocation_id(resultSet.getInt(4));
+//                listDepartment.add(d);
+//            }
+//
+//        } catch (Exception e) {
+//            e.getStackTrace();
+//        }
+//
+//        return listDepartment;
+//    }
+//
+//    @Override
+//    public boolean insert(Department d) {
+//        boolean result = false;
+//        String query = "INSERT INTO Departments (department_id, department_name, manager_id, location_id) VALUES (?,?,?,?)";
+//        try {
+//            PreparedStatement preparedStatement = connection.prepareStatement(query);
+//            preparedStatement.setInt(1, d.getId());
+//            preparedStatement.setString(2, d.getName());
+//            preparedStatement.setInt(3, d.getManager_id());
+//            preparedStatement.setInt(4, d.getLocation_id());
+//            preparedStatement.executeQuery();
+//            result = true;
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return result;
+//    }
+//
+//    @Override
+//    public boolean update(Department d) {
+//        boolean result = false;
+//        String query = "UPDATE Departments SET department_name = ?,manager_id = ?, location_id=? WHERE department_id=?";
+//        try {
+//            PreparedStatement preparedStatement = connection.prepareStatement(query);
+//            preparedStatement.setString(1, d.getName());
+//            preparedStatement.setInt(2, d.getManager_id());
+//            preparedStatement.setInt(3, d.getLocation_id());
+//            preparedStatement.setInt(4, d.getId());
+//            preparedStatement.executeQuery();
+//            result = true;
+//        } catch (Exception e) {
+//            e.getStackTrace();
+//        }
+//        return result;
+//    }
+
+    
 }

@@ -91,9 +91,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jStart" max="32767" attributes="0"/>
-                          <Component id="jEnd" max="32767" attributes="0"/>
-                          <Component id="jEmployee" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jEmployee" alignment="0" pref="48" max="32767" attributes="0"/>
                           <Component id="jJob" alignment="0" max="32767" attributes="0"/>
                           <Component id="jDepartment" alignment="0" max="32767" attributes="0"/>
                       </Group>
@@ -136,16 +134,10 @@
                   <Component id="jEmployee" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jStart" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                  <Component id="jEnd" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                   <Component id="jJob" min="-2" max="-2" attributes="0"/>
@@ -310,10 +302,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Update"/>
       </Properties>
-    </Component>
-    <Component class="com.toedter.calendar.JDateChooser" name="jStart">
-    </Component>
-    <Component class="com.toedter.calendar.JDateChooser" name="jEnd">
     </Component>
   </SubComponents>
 </Form>

@@ -20,34 +20,34 @@ public class DepartmentController implements IDepartmentController{
 
     @Override
     public List<Department> getAll() {
-        return iddao.getAll();
+        return iddao.getData("",false);
     }
 
     @Override
     public List<Department> getById(String id) {
-        return iddao.getById(Integer.parseInt(id));
+        return iddao.getData(Integer.parseInt(id),true);
     }
 
     @Override
     public List<Department> search(String key) {
-        return iddao.search(key);
+        return iddao.getData(key, false);
     }
 
     @Override
-    public String insert(String id, String name, String manager_id, String location_id) {
+    public String insert(String name, String manager_id, String location_id, String id) {
         String result = "Maaf data gagal disimpan";
         Department d = new Department(Integer.parseInt(id),name, Integer.parseInt(manager_id), Integer.parseInt(location_id));
-        if (iddao.insert(d)) {
+        if (iddao.save(d,true)) {
             result = "Data berhasil disimpan";
         }
         return result;
     }
 
     @Override
-    public String update(String id, String name, String manager_id, String location_id) {
+    public String update(String name, String manager_id, String location_id, String id) {
         String result = "Maaf data gagal diupdate";
         Department d = new Department(Integer.parseInt(id),name, Integer.parseInt(manager_id), Integer.parseInt(location_id));
-        if (iddao.update(d)) {
+        if (iddao.save(d,false)) {
             result = "Data berhasil diupdate";
         }
         return result;

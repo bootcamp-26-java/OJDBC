@@ -132,8 +132,6 @@ public class JobHistoryView extends javax.swing.JFrame {
         jInsert = new javax.swing.JButton();
         jDelete = new javax.swing.JButton();
         jUpdate = new javax.swing.JButton();
-        jStart = new com.toedter.calendar.JDateChooser();
-        jEnd = new com.toedter.calendar.JDateChooser();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -277,9 +275,7 @@ public class JobHistoryView extends javax.swing.JFrame {
                             .addComponent(jLabel6))
                         .addGap(37, 37, 37)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jStart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jEnd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jEmployee)
+                            .addComponent(jEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                             .addComponent(jJob)
                             .addComponent(jDepartment)))
                     .addGroup(layout.createSequentialGroup()
@@ -312,14 +308,10 @@ public class JobHistoryView extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jStart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jEnd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
+                .addComponent(jLabel3)
+                .addGap(20, 20, 20)
+                .addComponent(jLabel4)
+                .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
                     .addComponent(jJob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -454,7 +446,6 @@ public class JobHistoryView extends javax.swing.JFrame {
     private javax.swing.JButton jDelete;
     private javax.swing.JTextField jDepartment;
     private javax.swing.JTextField jEmployee;
-    private com.toedter.calendar.JDateChooser jEnd;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JButton jInsert;
     private javax.swing.JTextField jJob;
@@ -466,7 +457,6 @@ public class JobHistoryView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private com.toedter.calendar.JDateChooser jStart;
     private javax.swing.JButton jUpdate;
     public static javax.swing.JTable tbl;
     public static javax.swing.JTable tblJob;

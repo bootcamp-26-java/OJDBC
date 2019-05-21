@@ -29,24 +29,24 @@ public class JobsController implements IJobsController {
 
     @Override
     public List<Job> getAll() {
-        return ijdao.getAll();
+        return ijdao.getData("", false);
     }
 
     @Override
     public List<Job> getById(String id) {
-        return ijdao.getByID(id);
+        return ijdao.getData(id, true);
     }
 
     @Override
     public List<Job> search(String key) {
-        return ijdao.search(key);
+        return ijdao.getData(key, false);
     }
 
     @Override
     public String insert(String id, String Title, String Min_Salary, String Max_Salary) {
-        String result = " ";
+        String result = "";
         Job jobs = new Job(id, Title, Integer.parseInt(Min_Salary), Integer.parseInt(Max_Salary));
-        if (ijdao.insert(jobs)) {
+        if (ijdao.save(jobs, true)) {
             result = "Data Berhasil Disimpan";
         }
         else {
@@ -57,9 +57,9 @@ public class JobsController implements IJobsController {
 
     @Override
     public String update(String id, String Title, String Min_Salary, String Max_Salary) {
-        String result = " ";
+        String result = "";
         Job jobs = new Job(id, Title, Integer.parseInt(Min_Salary), Integer.parseInt(Max_Salary));
-        if (ijdao.update(jobs)) {
+        if (ijdao.save(jobs, false)) {
             result = "Data Berhasil Diupdate";
         }
         else {
@@ -70,7 +70,7 @@ public class JobsController implements IJobsController {
 
     @Override
     public String delete(String id) {
-        String result = " ";
+        String result = "";
         if (ijdao.delete(id)) {
             result = "Data Berhasil Dihapus";
         }
