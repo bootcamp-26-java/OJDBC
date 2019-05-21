@@ -23,7 +23,6 @@ public interface IJobHistoryDAO {
 //    public boolean insert(JobHistory r);
 //    
 //    public boolean update(JobHistory r);
-    
     public boolean delete(int id);
     public List<JobHistory> getData(Object key, boolean isGetByEmployee_Id);
     public boolean save(JobHistory r, boolean isInsert);    
