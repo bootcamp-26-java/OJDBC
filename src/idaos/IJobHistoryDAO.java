@@ -14,17 +14,20 @@ import models.JobHistory;
  */
 public interface IJobHistoryDAO {
     
-    public List<JobHistory> getAll();
-    
-    public List<JobHistory> getById(int id);
-    
-    public List<JobHistory> search(String key);
-    
-    public boolean insert(JobHistory r);
-    
-    public boolean update(JobHistory r);
+//    public List<JobHistory> getAll();
+//    
+//    public List<JobHistory> getById(int id);
+//    
+//    public List<JobHistory> search(String key);
+//    
+//    public boolean insert(JobHistory r);
+//    
+//    public boolean update(JobHistory r);
     
     public boolean delete(int id);
+    public List<JobHistory> getData(Object key, boolean isGetByEmployee_Id);
+    public boolean save(JobHistory r, boolean isInsert);
+    
 
     
 }
