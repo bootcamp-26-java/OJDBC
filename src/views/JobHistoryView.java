@@ -30,7 +30,7 @@ public class JobHistoryView extends javax.swing.JFrame {
 //    private IJobHistoryDAO data = new JobHistoryDAO(connection);
 //    private JobHistory jobs;
     DBConnection connection = new DBConnection();
-    IJobHistoryDAO ijc = new JobHistoryDAO(connection.getConnection());
+    IJobHistoryController ijc = new JobHistoryController(connection.getConnection());
 
 
 
