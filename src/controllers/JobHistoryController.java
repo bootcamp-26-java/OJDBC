@@ -27,24 +27,24 @@ public class JobHistoryController implements IJobHistoryController {
 
     @Override
     public List<JobHistory> getAll() {
-        return irdao.getAll();
+        return irdao.getData("", false);
     }
 
     @Override
     public List<JobHistory> getById(int id) {
-        return irdao.getById(id);
+        return irdao.getData(id, true);
     }
 
     @Override
     public List<JobHistory> search(String key) {
-        return irdao.search(key);
+        return irdao.getData(key, false);
     }
 
     @Override
     public String insert(int employee_id, String start_date, String end_date, String job_id, int department_id) {
         String result = "";
         JobHistory jobhistory = new JobHistory(employee_id, start_date, end_date, job_id, department_id);
-        if (irdao.insert(jobhistory)) {
+        if (irdao.save(jobhistory, true)) {
             result = "Data berhasil disimpan";
         } else {
             result = "Maaf data gagal disimpan";
@@ -56,7 +56,7 @@ public class JobHistoryController implements IJobHistoryController {
     public String update(int employee_id, String start_date, String end_date, String job_id, int department_id) {
         String result = "";
         JobHistory jobhistory = new JobHistory(employee_id, start_date, end_date, job_id, department_id);
-        if (irdao.update(jobhistory)) {
+        if (irdao.save(jobhistory, false)) {
             result = "Data berhasil diupdate";
         } else {
             result = "Maaf data gagal diupdate";
